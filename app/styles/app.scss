@@ -1,0 +1,56 @@
+
+// Bootstrap Variables
+$icon-font-path: '../../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
+
+// Import Bootstrap
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+
+}
+
+h1 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size: 6.5em;
+  color: white;
+  margin-top: 60px;
+}
+
+.container-fluid {
+  margin: 0 auto;
+  padding: 0;
+}
+
+.head {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  min-height: 240px;
+  background-image: url(../images/kitchen-head.jpg);
+  background-position: top;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+.login-bar {
+  float: right;
+  margin-right: 10px;
+  margin-top: 14px;
+}
+
+.login-entry {
+  display: inline-block;
+  margin-right: 14px;
+}
