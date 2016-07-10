@@ -14,7 +14,7 @@ var AppContainer = React.createClass({
   },
   componentWillMount: function(){
   var recipeItems = new RecipeCollection();
-console.log(recipeItems);
+  console.log(recipeItems);
     recipeItems.add([
       {
         'imageURL': 'http://www.prouditaliancook.com/wp-content/uploads/2014/01/cacci14top.jpg',
@@ -57,14 +57,24 @@ console.log(recipeItems);
   render: function(){
     return (
       <div>
-        <div className="login-bar">
-          <div className="form-group form-group-sm">
-            <span className="login-entry"><input type="text" className="col-xs-3 form-control input-sm" id="username" placeholder="User name" /></span>
-            <span className="login-entry"><input type="text" className="col-xs-3 form-control input-sm" id="password" placeholder="Password" /></span>
-            <span className="login-entry"><button type="submit" className="col-xs-12 btn btn-warning btn-xs">Login</button></span>
+        <section className="head">
+          <div className="row login-bar">
+            <div className="form-group form-group-sm">
+              <span className="login-entry"><input type="text" className="col-xs-2 form-control input-sm" id="username" placeholder="User name" /></span>
+              <span className="login-entry"><input type="password" className="col-xs-2 form-control input-sm" id="password" placeholder="Password" /></span>
+              <span className="login-entry"><button type="submit" className="col-xs-12 btn btn-warning btn-xs">Login</button></span>
+            </div>
           </div>
-        </div>
-        <div className="head"><h1>The Baker's Book</h1></div>
+          <div className="row title-bar">
+            <div className="col-xs-offset-3 col-xs-6 title-top"></div>
+            <div className="col-xs-offset-3 col-xs-6 title-name">The Baker's Book</div>
+            <div className="row">
+              <span className="col-xs-offset-3 col-xs-2 title-bottom"></span>
+              <span className="col-xs-offset-2 col-xs-2 title-bottom"></span>
+            </div>
+            <span className="glyphicon glyphicon-leaf title-motif"></span>
+          </div>
+        </section>
       </div>
     );
   }
