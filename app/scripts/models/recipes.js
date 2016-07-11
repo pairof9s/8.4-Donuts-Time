@@ -31,7 +31,11 @@ var Recipe = Backbone.Model.extend({
 });
 
 var RecipeCollection = Backbone.Collection.extend({
-  model: Recipe
+  model: Recipe,
+  url: 'https://tiny-parse-server.herojuapp.com/classes/D9recipes',
+  parser: function(serverResponse){
+    return serverResponse.results;
+  }
 });
 
 
