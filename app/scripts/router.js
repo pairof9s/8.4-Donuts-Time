@@ -3,12 +3,13 @@ var ReactDOM = require('react-dom');
 var $ = require('jquery');
 var Backbone = require('backbone');
 
-
 var LoginForm = require('./components/login.jsx');
 var RecipeList = require('./components/recipe-list.jsx');
 var RecipeForm = require('./components/recipe-form.jsx');
 // var recipes = require('./models/recipes');
 // var cart = require('./models/cart');
+
+
 // http://..../# => ''
 // http://..../#login => 'login'
 // http://..../#signup => 'signup'
@@ -17,13 +18,13 @@ var RecipeForm = require('./components/recipe-form.jsx');
 var Router = Backbone.Router.extend({
   routes: {
     '': 'indexController',
-    'login': 'loginController',
-    'signup': 'signupController',
-    'dashboard': 'dashboardController',
+    'login/': 'loginController',
+    'signup/': 'signupController',
+    'dashboard/': 'dashboardController',
     'recipes/': 'recipeList',
     'recipes/add/': 'recipeAddChange',
     'recipes/:id/edit/': 'recipeAddChange',
-    '/recipes/:id': 'recipeDetail',
+    '/recipes/:id': 'recipeDetail'
   },
   initialize: function(){
     //JSON.parse(localStorage.getItem('user'));  -- alternate method
@@ -36,10 +37,11 @@ var Router = Backbone.Router.extend({
     console.log('index');
   },
   loginController: function(){
+    console.log('login');
     var self = this;
     ReactDOM.render(
       React.createElement(LoginForm, {router: self}),
-      document.getElementsById('container')
+      document.getElementById('container')
     )
   },
   signupController: function(){
@@ -53,7 +55,7 @@ var Router = Backbone.Router.extend({
     var self = this;
     ReactDOM.render(
       React.createElement(RecipeList, {router: self}),
-      document.getElementsById('container')
+      document.getElementById('container')
     )
   },
   recipeDetail: function(id){
@@ -64,7 +66,7 @@ var Router = Backbone.Router.extend({
     var self = this;
     ReactDOM.render(
       React.createElement(RecipeForm, {router: self, editId: id}),
-      document.getElementsById('container')
+      document.getElementById('container')
     )
   },
 });

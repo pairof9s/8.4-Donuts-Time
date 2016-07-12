@@ -1,6 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var models = require('../modles/recipes');
+var models = require('../models/recipes');
 
 
 var RecipeList = React.createClass({
@@ -18,26 +18,30 @@ var RecipeList = React.createClass({
   },
   render: function(){
     var recipes = this.state.recipeCollection;
+    console.log(recipes);
     var recipeList = recipes.map(function(recipe){
       return (
-        <li key={recipe.get('id')}>
+        <li key={recipe.get('objectId')}>
           {recipe.get('recipeName')}
-          <a href={"#recipes/" + recipe.get('id') + "/edit/"}>Edit</a>
+          <a href={"#recipes/" + recipe.get('objectId') + "/edit/"}>Edit</a>
         </li>
       );
     });
 
     return (
-      <div className"row">
-        <div className="col-md-12">
-          <h1>Recipes! <a href="#recipes/add/" className="btn btn-success pull-right"></a></h1>
-          <ul>
-            {recipeList}
-          </ul>
-        </div>
-      </div>
-    )
-  }
-});
+       <div className="row">
+         <div className="col-md-12">
+           <h1>
+             Recipes!
+             <a href="#recipes/add/" className="btn btn-primary pull-right">Add</a>
+           </h1>
+           <ul>
+             {recipeList}
+           </ul>
+         </div>
+       </div>
+     )
+   }
+ });
 
 module.exports = RecipeList;

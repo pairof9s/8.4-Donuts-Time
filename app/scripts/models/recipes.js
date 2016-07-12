@@ -22,17 +22,23 @@ var Recipe = Backbone.Model.extend({
     'directions': '',
     'personalNotes': '',
   },
-  displayPrep: function(){
-  return (this.get('prepTime') / 60).toFixed(2);
-  },
-  displayCook: function(){
-  return (this.get('cookTime') / 60).toFixed(2);
+  idAttribute: 'objectId',
+  urlRoot: 'https://tiny-parse-server.herokuapp.com/classes/D9recipes/',
+  url: function(){
+    return this.urlRoot + this.get('objectId') + '/';
   }
+
+  // displayPrep: function(){
+  // return (this.get('prepTime') / 60).toFixed(2);
+  // },
+  // displayCook: function(){
+  // return (this.get('cookTime') / 60).toFixed(2);
+  // }
 });
 
 var RecipeCollection = Backbone.Collection.extend({
   model: Recipe,
-  url: 'https://tiny-parse-server.herojuapp.com/classes/D9recipes',
+  url: 'https://tiny-parse-server.herokuapp.com/classes/D9recipes/',
   parser: function(serverResponse){
     return serverResponse.results;
   }

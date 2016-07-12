@@ -4,6 +4,7 @@ var Cookies = require('js-cookie');
 var RecipeCollection = require('../models/recipes.js').RecipeCollection;
 var CartCollection = require('../models/cart.js').CartCollection;
 var CartItem = require('../models/cart.js').CartItem;
+var RecipeForm = require('./recipe-form.jsx');
 
 
 var AppContainer = React.createClass({
@@ -58,21 +59,25 @@ var AppContainer = React.createClass({
     return (
       <div>
         <section className="head">
-          <div className="row login-bar">
-            <div className="form-group form-group-sm">
-              <span className="login-entry"><input type="text" className="col-xs-2 form-control input-sm" id="username" placeholder="User name" /></span>
-              <span className="login-entry"><input type="password" className="col-xs-2 form-control input-sm" id="password" placeholder="Password" /></span>
-              <span className="login-entry"><button type="submit" className="col-xs-12 btn btn-warning btn-xs">Login</button></span>
+          <div className="row">
+            <div className="col-xs-offset-10 col-xs-2">
+              <div className="glyphicon glyphicon-plus uni-nav" alt="Add Recipe"><a href="#add"></a></div>
+              <div className="glyphicon glyphicon-user uni-nav" alt="Login"><a href="#login"></a></div>
+              <div className="glyphicon glyphicon-cog uni-nav" alt="Change Settings"><a href="#recipes"></a></div>
             </div>
           </div>
-          <div className="row title-bar">
-            <div className="col-xs-offset-3 col-xs-6 title-top"></div>
+          <div className="row">
             <div className="col-xs-offset-3 col-xs-6 title-name">The Baker's Book</div>
-            <div className="row">
-              <span className="col-xs-offset-3 col-xs-2 title-bottom"></span>
-              <span className="col-xs-offset-2 col-xs-2 title-bottom"></span>
-            </div>
+          </div>
+          <div className="row">
+            <span className="col-xs-offset-3 col-xs-2 title-bottom"></span>
+            <span className="col-xs-offset-2 col-xs-2 title-bottom"></span>
+          </div>
             <span className="glyphicon glyphicon-leaf title-motif"></span>
+        </section>
+        <section>
+          <div className="row">
+            <div className="well col-md-6 recipe-change">{RecipeForm}</div>
           </div>
         </section>
       </div>
