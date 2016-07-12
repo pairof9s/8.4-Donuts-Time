@@ -2,9 +2,9 @@ var React = require('react');
 var Cookies = require('js-cookie');
 
 var RecipeCollection = require('../models/recipes.js').RecipeCollection;
-var CartCollection = require('../models/cart.js').CartCollection;
-var CartItem = require('../models/cart.js').CartItem;
 var RecipeForm = require('./recipe-form.jsx');
+var LoginForm = require('./login.jsx').LoginForm;
+var SignUpForm = require('./login.jsx').SignUpForm;
 
 
 var AppContainer = React.createClass({
@@ -30,21 +30,21 @@ var AppContainer = React.createClass({
         'tempF': true,
         'servings': 6,
         'servingType': '1/6 Dish',
-        'step01Amount': '2',
-        'step01Unit': 'lbs',
-        'step01Ingrediant': 'Chicken breast, 1/4" cubed',
-        'step02Amount': '1',
-        'step02Unit': 'lbs',
-        'step02Ingrediant': 'Rotini noodles, uncooked',
-        'step03Amount': '1/2',
-        'step03Unit': 'tspn',
-        'step03Ingrediant': 'Salt',
-        'step04Amount': '1/4',
-        'step04Unit': 'tspn',
-        'step04Ingrediant': 'Ground black pepper',
-        'step05Amount': '1',
-        'step05Unit': 'unit',
-        'step05Ingrediant': 'Onion, diced medium',
+        'amount': '2',
+        'unit': 'lbs',
+        'ingrediant': 'Chicken breast, 1/4" cubed',
+        // 'step02Amount': '1',
+        // 'step02Unit': 'lbs',
+        // 'step02Ingrediant': 'Rotini noodles, uncooked',
+        // 'step03Amount': '1/2',
+        // 'step03Unit': 'tspn',
+        // 'step03Ingrediant': 'Salt',
+        // 'step04Amount': '1/4',
+        // 'step04Unit': 'tspn',
+        // 'step04Ingrediant': 'Ground black pepper',
+        // 'step05Amount': '1',
+        // 'step05Unit': 'unit',
+        // 'step05Ingrediant': 'Onion, diced medium',
         'directions': 'Preheat oven to 375°. In medium sauce pan, bring to boil 3 cups of water and then add Rotini noodles; drain once soft and place in casserole dish. In skillet, sautee diced onion with olive oil. Once carmelized, add to casserole dish. Add tomatoes, oregano, garlic, sauce and diced chicken to casserole dish. Cover and place in oven for 50-55 minutes. Remove and let sit for 5 minutes before garnishing with crumbled Parmesan and parsley, then serve!',
         'personalNotes': '',
       }
@@ -61,9 +61,9 @@ var AppContainer = React.createClass({
         <section className="head">
           <div className="row">
             <div className="col-xs-offset-10 col-xs-2">
-              <div className="glyphicon glyphicon-plus uni-nav" alt="Add Recipe"><a href="#add"></a></div>
-              <div className="glyphicon glyphicon-user uni-nav" alt="Login"><a href="#login"></a></div>
-              <div className="glyphicon glyphicon-cog uni-nav" alt="Change Settings"><a href="#recipes"></a></div>
+              <div className="glyphicon glyphicon-plus uni-nav" alt="Add Recipe"><a href="#recipes/add/"></a></div>
+              <div className="glyphicon glyphicon-user uni-nav" alt="Login"><a href="#login/"></a></div>
+              <div className="glyphicon glyphicon-cog uni-nav" alt="Change Settings"><a href="#recipes/"></a></div>
             </div>
           </div>
           <div className="row">
@@ -76,8 +76,11 @@ var AppContainer = React.createClass({
             <span className="glyphicon glyphicon-leaf title-motif"></span>
         </section>
         <section>
-          <div className="row">
-            <div className="well col-md-6 recipe-change">{RecipeForm}</div>
+          <div>
+            <LoginForm />
+          </div>
+          <div>
+            <SignUpForm />
           </div>
         </section>
       </div>
@@ -86,3 +89,11 @@ var AppContainer = React.createClass({
 });
 
 module.exports = AppContainer;
+
+
+// Previous component load for Recipe Form HTML for testing.
+// <section>
+//   <div className="row">
+//     <div className="well col-md-6 recipe-change">{RecipeForm}</div>
+//   </div>
+// </section>

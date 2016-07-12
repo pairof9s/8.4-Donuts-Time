@@ -16,11 +16,11 @@ var Recipe = Backbone.Model.extend({
     'tempF': true,
     'servings': 0,
     'servingType': '',
-    'step01Amount': '',
-    'step01Unit': '',
-    'step01Ingrediant': '',
+    'amount': '',
+    'unit': '',
+    'ingrediant': '',
     'directions': '',
-    'personalNotes': '',
+    'personalNotes': ''
   },
   idAttribute: 'objectId',
   urlRoot: 'https://tiny-parse-server.herokuapp.com/classes/D9recipes/',
@@ -47,5 +47,5 @@ var RecipeCollection = Backbone.Collection.extend({
 
 module.exports = {
   'Recipe': Recipe,
-  'RecipeCollection': RecipeCollection,
+  'RecipeCollection': RecipeCollection
 }

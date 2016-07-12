@@ -1,54 +1,56 @@
 var React = require('react');
-var ReactDOM = require('react-dom');
-
-// React Bootstrap code for forms
-// var FormGroup = require('react-bootstrap/lib/FormGroup');
-// var FormControl = require('react-bootstrap/lib/FormControl');
 
 var models = require('../models/recipes.js');
 var RecipeCollection = require('../models/recipes.js').RecipeCollection;
-var CartCollection = require('../models/cart.js').CartCollection;
-var CartItem = require('../models/cart.js').CartItem;
+
 
 var RecipeForm = React.createClass({
   getInitialState: function(){
     return {
+      'recipeName': '',
       recipe: new models.Recipe()
     };
   },
   componentWillMount: function(){
-    var recipe = this.state.recipe;
-    console.log(recipe);
-    recipe.set('id', this.props.editId);
-    recipe.sync().done(function(){
-      self.setState({recipe: recipe});
-    });
+    var self = this;
+    if(this.props.editId){
+      var recipe = this.state.recipe;
+      recipe.set('objectId', this.props.editId);
+      recipe.fetch().done(function(){
+        self.setState({
+          recipe: recipe,
+          recipeName: recipe.get('recipeName')
+        });
+      });
+    }
   },
   handleSubmit: function(e){
     e.preventDefault();
     var router = this.props.router;
 
-    var recipeData = jQuery(e.target).serializeObject();
+    // var recipeData = jQuery(e.target).serializeObject();
+    // recipe.set(recipeData);
     var recipe = this.state.recipe;
-
-    recipe.set(recipeData);
+    recipe.set({'recipeName': this.state.recipeName});
     recipe.save().done(function(){
       router.navigate('recipes/', {trigger: true});
     });
-
+  },
+  handleTitleChange: function(e){
+    this.setState({'recipeName': e.target.value});
   },
   render: function(){
     return (
       <div className="row">
-        <div className="col-md-12">
-          <h1>Add Recipe</h1>
+        <div className="col-md-4">
+          <h3>Add Recipe</h3>
           <div>
-            <form>
+            <form onSubmit={this.handleSubmit}>
               <div className="form-group">
                 <label htmlFor="recipeName">Recipe Name</label>
-                <input type="recipeName" className="form-control" id="recipeName" placeholder="Recipe Name"></input>
+                <input type="recipeName" className="form-control" id="recipeName" placeholder="Enter recipe name..."></input>
               </div>
-              <input onClick={this.handleSubmit} type="submit" class="btn btn-warning" value="Add Recipe"></input>
+              <input value={this.state.recipeName} onChange={this.handleTitleChange} type="submit" className="btn btn-warning" value="Add Recipe"></input>
             </form>
           </div>
         </div>

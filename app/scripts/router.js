@@ -1,13 +1,12 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var $ = require('jquery');
 var Backbone = require('backbone');
 
-var LoginForm = require('./components/login.jsx');
+var Recipe = require('./models/recipes').Recipe;
+var AppContainer = require('./components/app.jsx');
 var RecipeList = require('./components/recipe-list.jsx');
 var RecipeForm = require('./components/recipe-form.jsx');
-// var recipes = require('./models/recipes');
-// var cart = require('./models/cart');
+var RecipeDetail = require('./components/recipe-detail.jsx');
 
 
 // http://..../# => ''
@@ -34,7 +33,11 @@ var Router = Backbone.Router.extend({
     // this.user = user;
   },
   indexController: function(){
-    console.log('index');
+    var self = this;
+    ReactDOM.render(
+      React.createElement(AppContainer, {router: self}),
+      document.getElementById('container')
+    );
   },
   loginController: function(){
     console.log('login');
@@ -46,12 +49,17 @@ var Router = Backbone.Router.extend({
   },
   signupController: function(){
     console.log('signup');
+    var self = this;
+    ReactDOM.render(
+      React.createElement(SignUpForm, {router: self}),
+      document.getElementById('container')
+    )
   },
   dashboardController: function(){
     console.log('dashboard');
   },
   recipeList: function(){
-    console.log('Recipe List');
+    console.log('recipes');
     var self = this;
     ReactDOM.render(
       React.createElement(RecipeList, {router: self}),
@@ -62,7 +70,7 @@ var Router = Backbone.Router.extend({
     console.log('Recipe Detail');
   },
   recipeAddChange: function(id){
-    console.log('Recipe Add/Change');
+    console.log('recipes/add');
     var self = this;
     ReactDOM.render(
       React.createElement(RecipeForm, {router: self, editId: id}),
