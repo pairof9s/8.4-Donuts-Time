@@ -1,7 +1,8 @@
 var React = require('react');
 
 var models = require('../models/recipes.js');
-var RecipeCollection = require('../models/recipes.js').RecipeCollection;
+var RecipeCollection = require('../models/recipes.js');
+var FormUpload = require('./library.jsx');
 
 
 var RecipeForm = React.createClass({
@@ -39,10 +40,13 @@ var RecipeForm = React.createClass({
   handleTitleChange: function(e){
     this.setState({'recipeName': e.target.value});
   },
+
   render: function(){
     return (
-      <div className="well col-sm-6 detail-head img-responsive">
-        <h3><span className="form-title">Add Recipe</span></h3>
+      <div className="well col-sm-offset-3 col-sm-6 detail-head img-responsive">
+        <div className="form-title">
+          <h3>Add Recipe</h3>
+        </div>
         <div>
           <form onSubmit={this.handleSubmit}>
             <div><img src="./images/Add_photo.jpg" alt="" className="img-rounded col-sm-3" /></div>
@@ -60,8 +64,8 @@ var RecipeForm = React.createClass({
                 <input type="checkbox" id="private" value="false" /> Make It Private
               </label>
             </div>
-            <div className="row col-xs-12">
-              <div className="form-inline col-sm-3">
+            <div className="row col-xs-12 sect-space">
+              <div className="form-inline">
                 <select type="recipeType" className="form-control" id="recipeType" >
                   <option>Recipe Type</option>
                   <option>Breakfast</option>
@@ -69,14 +73,8 @@ var RecipeForm = React.createClass({
                   <option>Dinner</option>
                   <option>Dessert</option>
                 </select>
-              </div>
-              <div className="form-inline col-sm-2">
                 <input type="text" className="form-control" id="prepTime" placeholder="Prep Time" />
-              </div>
-              <div className="form-inline col-sm-2">
                 <input type="text" className="form-control" id="cookTime" placeholder="Cook Time" />
-              </div>
-              <div className="form-inline col-sm-2">
                 <input type="text" className="form-control" id="cookTemp" placeholder="Cook Temp" />
               </div>
             </div>
@@ -85,10 +83,13 @@ var RecipeForm = React.createClass({
             </div>
           </form>
         </div>
+        <div>
+          <FormUpload />
+        </div>
       </div>
     )
   }
 });
 
 
-module.exports = RecipeForm;
+module.exports = RecipeForm

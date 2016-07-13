@@ -23,7 +23,7 @@ var Recipe = Backbone.Model.extend({
     'personalNotes': ''
   },
   idAttribute: 'objectId',
-  urlRoot: 'https://tiny-parse-server.herokuapp.com/classes/D9recipes/',
+  urlRoot: 'https://d9-dev-server.herokuapp.com/classes/D9recipes/',
   url: function(){
     return this.urlRoot + this.get('objectId') + '/';
   }
@@ -38,7 +38,7 @@ var Recipe = Backbone.Model.extend({
 
 var RecipeCollection = Backbone.Collection.extend({
   model: Recipe,
-  url: 'https://tiny-parse-server.herokuapp.com/classes/D9recipes/',
+  url: 'https://d9-dev-server.herokuapp.com/classes/D9recipes/',
   parser: function(serverResponse){
     return serverResponse.results;
   }

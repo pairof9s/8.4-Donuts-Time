@@ -30,8 +30,8 @@ var RecipeList = React.createClass({
 
     return (
        <div className="row">
-         <div className="col-md-12">
-           <h1>
+         <div className="col-md-offset-2 col-md-8">
+           <h1 className="form-title">
              Recipes!<a href="#recipes/add/" className="btn btn-warning btn-sm pull-right">Add</a>
            </h1>
            <ul>

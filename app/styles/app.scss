@@ -22,19 +22,33 @@ body {
   background-color: #E2DAC6;
 }
 
+h1 {
+  font-family: 'Josefin Sans', serif;
+  font-weight: 700;
+}
+
+h3 {
+  font-family: 'Josefin Sans', serif;
+  font-weight: 700;
+}
+
 h4 {
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 700;
+}
+
+p {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.4em;
+  color: #472400;
 }
 
 .container-fluid {
   margin: 0;
 }
 
-.home-lower {
-  background-color: white;
-}
-
+// Intro page masthead & universal navigation styling
 .head {
   position: relative;
   z-index: -1;
@@ -54,10 +68,8 @@ h4 {
   font-size: 1.3em;
 }
 
-.title-bar {
-  color: white;
-}
 
+// Intro Page Title "The Baker's Book" styling
 .title-name {
   font-family: 'Josefin Sans', sans-serif;
   color: white;
@@ -76,20 +88,18 @@ h4 {
   color: white;
 }
 
-.title-top {
-  border-top: 2px solid white;
-}
-
 .title-bottom {
   display: inline-block;
   border-top: 2px solid white;
 }
 
+
+// Login * Signup Forms styling
 .form-title {
-  font-family: 'Josefin Sans', serif;
-  font-weight: 400;
+  text-transform: uppercase;
   font-size: 1.75em;
-  color: #bbb;
+  color: #222;
+  margin-top: 70px;
 }
 
 .form-rule {
@@ -109,16 +119,14 @@ h4 {
   border-top: 1px solid #ddd;
 }
 
-.form-control {
-  margin-bottom: 8px;
-}
-
 .log-form {
   margin-top: 20px;
-  border: 2px dotted #ccc;
+  margin-left: 20px;
+  border: 3px solid white;
   background-color: #472400;
   color: #F0AD4E;
 }
+
 .log-sect {
   display: inline-block;
   text-transform: uppercase;
@@ -132,6 +140,33 @@ h4 {
   color: #F0AD4E;
 }
 
+.divider {
+  float: left;
+  min-height: 260px;
+  width: 1px;
+  border-left: 1px solid #472400;
+  margin-top: 20px;
+  margin-right: 10px;
+}
+
+
+// Body copy & general content styling
+.intro-box {
+  margin: 0 auto;
+  display: inline-block;
+}
+
+.sect-space {
+  margin-top: 14px;
+}
+
+.copy-box {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+
+// Recipe detail & edit form styling
 .recipe-change {
   min-width: 356px;
   min-height: 300px;
@@ -141,9 +176,43 @@ h4 {
 }
 
 .detail-head {
-  height: 50px;
+  height: 80px;
   background-image: url('../images/kitchen_cooking.jpg');
-  background-size: cover;
+  background-position: top;
   background-repeat: no-repeat;
-  margin-top: 30px;
+}
+
+.form-control {
+  color: #666;
+}
+
+#recipeType {
+  width: 110px;
+  margin-right: 6px;
+}
+
+#prepTime {
+  width: 90px;
+  margin-left: 6px;
+  margin-right: 6px;
+  font-size: .9em;
+}
+
+#cookTime {
+  width: 90px;
+  margin-left: 6px;
+  margin-right: 6px;
+  font-size: .9em;
+}
+
+#cookTemp {
+  width: 90px;
+  margin-left: 6px;
+  margin-right: 6px;
+  font-size: .9em;
+}
+
+.img-rounded {
+  max-width: 150px;
+  max-height: 150px;
 }

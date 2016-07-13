@@ -27,7 +27,7 @@ var LoginForm = React.createClass({
   },
   render: function(){
     return (
-      <div className="well col-md-offset-3 col-md-2 log-form">
+      <div className="well col-md-2 log-form">
         <div className="log-sect">
           <h4><span className="glyphicon glyphicon-log-in log-icon"></span>Log In...</h4>
         </div>
@@ -62,17 +62,20 @@ var SignUpForm = React.createClass({
   },
   render: function(){
     return (
-      <div className="well col-md-offset-2 col-md-2 log-form">
-        <div className="log-sect">
-          <h4><span className="glyphicon glyphicon-edit log-icon"></span>Sign Up...</h4>
+      <div>
+        <div className="divider"></div>
+        <div className="well col-md-2 log-form">
+          <div className="log-sect">
+            <h4><span className="glyphicon glyphicon-edit log-icon"></span>Sign Up...</h4>
+          </div>
+          <form onSubmit={this.handleSubmit} className="login-entry">
+            <label htmlFor="username">User Name</label>
+            <input type="username" className="form-control" id="username" placeholder="Create Username..."></input>
+            <label htmlFor="password">Password</label>
+            <input type="password" className="form-control" id="password" placeholder="Create Password..."></input>
+            <input onClick={this.handleSubmit} type="submit" className="btn btn-warning pull-right" value="Create User"></input>
+          </form>
         </div>
-        <form onSubmit={this.handleSubmit} className="login-entry">
-          <label htmlFor="username">User Name</label>
-          <input type="username" className="form-control" id="username" placeholder="Create Username..."></input>
-          <label htmlFor="password">Password</label>
-          <input type="password" className="form-control" id="password" placeholder="Create Password..."></input>
-          <input onClick={this.handleSubmit} type="submit" className="btn btn-warning pull-right" value="Create User"></input>
-        </form>
       </div>
     )
   }
