@@ -41,18 +41,49 @@ var RecipeForm = React.createClass({
   },
   render: function(){
     return (
-      <div className="row">
-        <div className="col-md-4">
-          <h3>Add Recipe</h3>
-          <div>
-            <form onSubmit={this.handleSubmit}>
-              <div className="form-group">
-                <label htmlFor="recipeName">Recipe Name</label>
-                <input type="recipeName" className="form-control" id="recipeName" placeholder="Enter recipe name..."></input>
+      <div className="well col-sm-6 detail-head img-responsive">
+        <h3><span className="form-title">Add Recipe</span></h3>
+        <div>
+          <form onSubmit={this.handleSubmit}>
+            <div><img src="./images/Add_photo.jpg" alt="" className="img-rounded col-sm-3" /></div>
+            <div className="form-group col-sm-6">
+              <input type="recipeName" className="form-control" id="recipeName" placeholder="Recipe Name"></input>
+            </div>
+            <div className="form-group col-sm-6">
+              <input type="chefName" className="form-control" id="chefName" placeholder="By Chef..."></input>
+            </div>
+            <div className="col-sm-6">
+              <label className="checkbox-inline">
+                <input type="checkbox" id="public" value="true" /> Make It Public
+              </label>
+              <label className="checkbox-inline">
+                <input type="checkbox" id="private" value="false" /> Make It Private
+              </label>
+            </div>
+            <div className="row col-xs-12">
+              <div className="form-inline col-sm-3">
+                <select type="recipeType" className="form-control" id="recipeType" >
+                  <option>Recipe Type</option>
+                  <option>Breakfast</option>
+                  <option>Lunch</option>
+                  <option>Dinner</option>
+                  <option>Dessert</option>
+                </select>
               </div>
-              <input value={this.state.recipeName} onChange={this.handleTitleChange} type="submit" className="btn btn-warning" value="Add Recipe"></input>
-            </form>
-          </div>
+              <div className="form-inline col-sm-2">
+                <input type="text" className="form-control" id="prepTime" placeholder="Prep Time" />
+              </div>
+              <div className="form-inline col-sm-2">
+                <input type="text" className="form-control" id="cookTime" placeholder="Cook Time" />
+              </div>
+              <div className="form-inline col-sm-2">
+                <input type="text" className="form-control" id="cookTemp" placeholder="Cook Temp" />
+              </div>
+            </div>
+            <div className="row">
+              <input value={this.state.recipeName} onChange={this.handleTitleChange} type="submit" className="btn btn-warning pull-right" value="Add Recipe"></input>
+            </div>
+          </form>
         </div>
       </div>
     )

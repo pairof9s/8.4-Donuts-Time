@@ -16,9 +16,10 @@ img {
   max-width: 100%;
 }
 
-h3 {
-  font-weight: 300;
-  color: #B4D11F;
+body {
+  margin: 0 auto;
+  padding: 0;
+  background-color: #E2DAC6;
 }
 
 h4 {
@@ -28,6 +29,10 @@ h4 {
 
 .container-fluid {
   margin: 0;
+}
+
+.home-lower {
+  background-color: white;
 }
 
 .head {
@@ -80,6 +85,17 @@ h4 {
   border-top: 2px solid white;
 }
 
+.form-title {
+  font-family: 'Josefin Sans', serif;
+  font-weight: 400;
+  font-size: 1.75em;
+  color: #bbb;
+}
+
+.form-rule {
+  border-bottom: 1px solid #bbb;
+}
+
 .form-sect-title {
   font-family: 'Josefin Sans', serif;
   font-style: italic;
@@ -122,4 +138,12 @@ h4 {
   margin-left: 14px;
   margin-top: 10px;
   border: 1px dotted #bbb;
+}
+
+.detail-head {
+  height: 50px;
+  background-image: url('../images/kitchen_cooking.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 30px;
 }

@@ -11,7 +11,7 @@ var RecipeList = React.createClass({
   },
   componentWillMount: function(){
     var self = this;
-    var recipeCollection = new models.recipeCollection();
+    var recipeCollection = new models.RecipeCollection();
     recipeCollection.fetch().done(function(){
       self.setState({recipeCollection: recipeCollection})
     });
@@ -32,7 +32,7 @@ var RecipeList = React.createClass({
        <div className="row">
          <div className="col-md-12">
            <h1>
-             Recipes!<a href="#recipes/add/" className="btn btn-primary pull-right">Add</a>
+             Recipes!<a href="#recipes/add/" className="btn btn-warning btn-sm pull-right">Add</a>
            </h1>
            <ul>
              {recipeList}
