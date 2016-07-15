@@ -12,6 +12,14 @@ $.ajaxSetup({
   }
 });
 
+
+require('./router');
+
+$(function(){
+Backbone.history.start();
+});
+
+
 // $.fn.serializeObject = function(){
 //     var o = {};
 //     var a = this.serializeArray();
@@ -68,9 +76,3 @@ $.ajaxSetup({
 //   React.createElement(RecipeForm, {recipe: recipe}),
 //   document.getElementById('container')
 // );
-
-require('./router');
-
-$(function(){
-Backbone.history.start();
-});

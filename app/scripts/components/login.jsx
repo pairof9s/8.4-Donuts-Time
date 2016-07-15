@@ -36,7 +36,7 @@ var LoginForm = React.createClass({
           <input type="username" className="form-control" id="username" placeholder="Enter Username"></input>
           <label htmlFor="password">Password</label>
           <input type="password" className="form-control" id="password" placeholder="Enter password"></input>
-          <input onClick={this.handleSubmit} type="submit" className="btn btn-warning pull-right" value="Login"></input>
+          <input onClick={this.handleSubmit} type="submit" className="btn btn-warning btn-sm pull-right" value="Login"></input>
         </form>
       </div>
     )
@@ -73,7 +73,7 @@ var SignUpForm = React.createClass({
             <input type="username" className="form-control" id="username" placeholder="Create Username..."></input>
             <label htmlFor="password">Password</label>
             <input type="password" className="form-control" id="password" placeholder="Create Password..."></input>
-            <input onClick={this.handleSubmit} type="submit" className="btn btn-warning pull-right" value="Create User"></input>
+            <input onClick={this.handleSubmit} type="submit" className="btn btn-warning btn-sm pull-right" value="Create User"></input>
           </form>
         </div>
       </div>

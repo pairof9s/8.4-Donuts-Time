@@ -44,8 +44,14 @@ p {
   color: #472400;
 }
 
+ul {
+  text-decoration: none;
+}
+
 .container-fluid {
   margin: 0;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 // Intro page masthead & universal navigation styling
@@ -68,6 +74,15 @@ p {
   font-size: 1.3em;
 }
 
+.head-sec {
+  z-index: -1;
+  width: 100%;
+  min-height: 100px;
+  background-image: url(../images/kitchen_cooking.jpg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 // Intro Page Title "The Baker's Book" styling
 .title-name {
@@ -96,10 +111,9 @@ p {
 
 // Login * Signup Forms styling
 .form-title {
-  text-transform: uppercase;
   font-size: 1.75em;
   color: #222;
-  margin-top: 70px;
+  margin-top: 100px;
 }
 
 .form-rule {
@@ -108,10 +122,11 @@ p {
 
 .form-sect-title {
   font-family: 'Josefin Sans', serif;
-  font-style: italic;
-  font-weight: 300;
-  font-size: 1em;
-  color: #ddd;
+  font-weight: 700;
+  color: #472400;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
 }
 
 .form-sect-rule {
@@ -151,6 +166,39 @@ p {
 
 
 // Body copy & general content styling
+.content {
+  float: right;
+}
+
+.side-bar {
+  position: absolute;
+  float: left;
+
+  ul {
+    list-style: none;
+    padding-left: 0px;
+  }
+}
+
+.side-links {
+  width: 150px;
+  height: 45px;
+  background-color: rgba(71, 36, 0, .20);
+  border-bottom: 2px solid #F0AD4E;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+  color: white;
+  text-align: center;
+  line-height: 45px;
+  margin-bottom: 8px;
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
 .intro-box {
   margin: 0 auto;
   display: inline-block;
@@ -183,7 +231,12 @@ p {
 }
 
 .form-control {
-  color: #666;
+  color: #777;
+}
+
+.checkbox-inline {
+  font-size: .85em;
+  color: #777;
 }
 
 #recipeType {
@@ -212,7 +265,25 @@ p {
   font-size: .9em;
 }
 
-.img-rounded {
-  max-width: 150px;
-  max-height: 150px;
+
+// Footer section
+.footer-area {
+  width: 100%;
+  height: 60px;
+  background-color: #F0AD4E;
+  padding: 10 30;
+  font-size: .9em;
+  text-align: center;
+  line-height: 60px;
+  position: fixed;
+  bottom: 0px;
+
+  a {
+    text-decoration: none;
+    color: #472400;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
 }
