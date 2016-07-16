@@ -110,6 +110,10 @@ ul {
 
 
 // Login * Signup Forms styling
+.form-control {
+  color: #777;
+}
+
 .form-title {
   font-size: 1.75em;
   color: #222;
@@ -150,6 +154,10 @@ ul {
   margin-bottom: 6px;
 }
 
+.log-entry {
+  margin-bottom: 10px;
+}
+
 .log-icon {
   margin-right: 12px;
   color: #F0AD4E;
@@ -165,8 +173,9 @@ ul {
 }
 
 
-// Body copy & general content styling
+// Body copy, Sidebar, & general content styling
 .content {
+  position: relative;
   float: right;
 }
 
@@ -230,10 +239,6 @@ ul {
   background-repeat: no-repeat;
 }
 
-.form-control {
-  color: #777;
-}
-
 .checkbox-inline {
   font-size: .85em;
   color: #777;
@@ -265,6 +270,11 @@ ul {
   font-size: .9em;
 }
 
+.well {
+  background-color: rgba(71, 36, 0, .20);
+  border: 2px solid #F0AD4E;
+  margin-top: 30px;
+}
 
 // Footer section
 .footer-area {

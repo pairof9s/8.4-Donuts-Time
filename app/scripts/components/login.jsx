@@ -31,11 +31,11 @@ var LoginForm = React.createClass({
         <div className="log-sect">
           <h4><span className="glyphicon glyphicon-log-in log-icon"></span>Log In...</h4>
         </div>
-        <form onSubmit={this.handleSubmit} className="login-entry">
+        <form onSubmit={this.handleSubmit}>
           <label htmlFor="username">User Name</label>
-          <input type="username" className="form-control" id="username" placeholder="Enter Username"></input>
+          <input type="username" className="form-control log-entry" id="username" placeholder="Enter Username"></input>
           <label htmlFor="password">Password</label>
-          <input type="password" className="form-control" id="password" placeholder="Enter password"></input>
+          <input type="password" className="form-control log-entry" id="password" placeholder="Enter password"></input>
           <input onClick={this.handleSubmit} type="submit" className="btn btn-warning btn-sm pull-right" value="Login"></input>
         </form>
       </div>
@@ -68,11 +68,11 @@ var SignUpForm = React.createClass({
           <div className="log-sect">
             <h4><span className="glyphicon glyphicon-edit log-icon"></span>Sign Up...</h4>
           </div>
-          <form onSubmit={this.handleSubmit} className="login-entry">
+          <form onSubmit={this.handleSubmit}>
             <label htmlFor="username">User Name</label>
-            <input type="username" className="form-control" id="username" placeholder="Create Username..."></input>
+            <input type="username" className="form-control log-entry" id="username" placeholder="Create Username..."></input>
             <label htmlFor="password">Password</label>
-            <input type="password" className="form-control" id="password" placeholder="Create Password..."></input>
+            <input type="password" className="form-control log-entry" id="password" placeholder="Create Password..."></input>
             <input onClick={this.handleSubmit} type="submit" className="btn btn-warning btn-sm pull-right" value="Create User"></input>
           </form>
         </div>

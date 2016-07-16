@@ -19,7 +19,6 @@ var Router = Backbone.Router.extend({
     '': 'indexController',
     'login/': 'loginController',
     'signup/': 'signupController',
-    // 'dashboard/': 'dashboardController',
     'recipes/': 'recipeList',
     'recipes/add/': 'recipeAddChange',
     'recipes/:id/edit/': 'recipeAddChange',
