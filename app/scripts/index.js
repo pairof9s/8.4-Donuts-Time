@@ -1,6 +1,7 @@
 var $ = window.jQuery = require('jquery');
 
 var Backbone = require('backbone');
+var User = require('./models/user').User;
 
 var Recipe = require('./models/recipes').Recipe;
 // var RecipeForm = require('./components/recipe-form.jsx');
@@ -12,6 +13,32 @@ $.ajaxSetup({
   }
 });
 
+$('#signup').on('submit', function(e){
+  e.preventDefault();
+  var email = $('#email').val();
+  var password = $('#password').val();
+
+  var newUser = new User();
+  newUser.set({'username': email, 'password': password});
+
+  console.log(newUser);
+
+  newUser.save();
+});
+
+$('#login').on('submit', function(e){
+  e.preventDefault();
+  var email = $('#email-login').val();
+  var password = $('#password-login').val();
+
+  var loggedInUser = User.login(email, password);
+
+  loggedInUser.done(function(response){
+    console.log(response);
+  }).failure(function(err){
+    console.log(err);
+  });
+});
 
 require('./router');
 
@@ -36,32 +63,6 @@ Backbone.history.start();
 //     return o;
 // };
 
-// $('#signup').on('submit', function(e){
-//   e.preventDefault();
-//   var email = $('#email').val();
-//   var password = $('#password').val();
-//
-//   var newUser = new User();
-//   newUser.set({'username': email, 'password': password});
-//
-//   console.log(newUser);
-//
-//   newUser.save();
-// });
-//
-// $('#login').on('submit', function(e){
-//   e.preventDefault();
-//   var email = $('#email-login').val();
-//   var password = $('#password-login').val();
-//
-//   var loggedInUser = User.login(email, password);
-//
-//   loggedInUser.done(function(response){
-//     console.log(response);
-//   }).failure(function(err){
-//     console.log(err);
-//   });
-// });
 
 
 // var AppContainer = require('./components/app.jsx');

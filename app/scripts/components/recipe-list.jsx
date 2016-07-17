@@ -50,9 +50,8 @@ var RecipeList = React.createClass({
          </div>
          <div><SideBar /></div>
          <div className="well col-md-offset-3 col-md-6">
-           <h1 className="form-title">
-             Recipes!<a href="#recipes/add/" className="btn btn-warning btn-sm pull-right">Add</a>
-           </h1>
+           <h1 className="form-title">Recipes</h1>
+           <a href="#recipes/add/" className="btn btn-warning btn-sm pull-right">Add</a>
            <ul>
              {recipeList}
            </ul>

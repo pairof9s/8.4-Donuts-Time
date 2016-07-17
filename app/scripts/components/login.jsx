@@ -27,7 +27,7 @@ var LoginForm = React.createClass({
   },
   render: function(){
     return (
-      <div className="well col-md-2 log-form">
+      <div className="col-md-2 log-form">
         <div className="log-sect">
           <h4><span className="glyphicon glyphicon-log-in log-icon"></span>Log In...</h4>
         </div>
@@ -64,7 +64,7 @@ var SignUpForm = React.createClass({
     return (
       <div>
         <div className="divider"></div>
-        <div className="well col-md-2 log-form">
+        <div className="col-md-2 log-form">
           <div className="log-sect">
             <h4><span className="glyphicon glyphicon-edit log-icon"></span>Sign Up...</h4>
           </div>

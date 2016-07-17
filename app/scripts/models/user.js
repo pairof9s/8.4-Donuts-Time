@@ -2,12 +2,12 @@ var Backbone = require('backbone');
 
 
 var User = Backbone.Model.extend({
-  urlRoot: 'https://d9-dev-server.herokuapp.com/classes/D9Users',
+  urlRoot: 'https://d9-dev-server.herokuapp.com/classes/D9users',
 },
   {login: function(username, password){
     var loggedInUser = new User();
     var queryString = 'username=' + username + '&password=' + password;
-    loggedInUser.urlRoot = 'https://d9-dev-server.herokuapp.com/classes/D9Users?' + queryString;
+    loggedInUser.urlRoot = 'https://d9-dev-server.herokuapp.com/classes/D9users?' + queryString;
     return loggedInUser.fetch();
     }
   });
