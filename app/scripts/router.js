@@ -4,6 +4,8 @@ var Backbone = require('backbone');
 
 var Recipe = require('./models/recipes').Recipe;
 var AppContainer = require('./components/app.jsx');
+var LoginForm = require('./components/login.jsx').LoginForm;
+var SignUpForm = require('./components/login.jsx').SignUpForm;
 var RecipeList = require('./components/recipe-list.jsx');
 var RecipeForm = require('./components/recipe-form.jsx');
 var RecipeDetail = require('./components/recipe-detail.jsx');
@@ -17,6 +19,7 @@ var RecipeDetail = require('./components/recipe-detail.jsx');
 var Router = Backbone.Router.extend({
   routes: {
     '': 'indexController',
+    'index': 'indexController',
     'login/': 'loginController',
     'signup/': 'signupController',
     'recipes/': 'recipeList',

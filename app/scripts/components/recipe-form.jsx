@@ -110,8 +110,5 @@ var RecipeForm = React.createClass({
   }
 });
 
-// <div>
-//   <FormUpload />
-// </div>
 
 module.exports = RecipeForm
