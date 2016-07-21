@@ -24,16 +24,17 @@ var LoginForm = React.createClass({
   handleLoginSubmit: function(e){
     e.preventDefault();
     var self = this;
-    var username = $('username').val();
-    var password = $('password').val();
-    var loggedInUser = User.login(username);
 
-    loggedInUser.done(function(response){
+    self.props.router.user.set('username');
+    self.props.router.user.save();
     self.props.router.navigate('recipes/', {trigger: true});
-    });
   },
-  handleChange: function(){
-
+  handlePasswordChange: function(e){
+    this.setState({password: e.target.value})
+  },
+  handleUsernameChange: function(e){
+    this.setState({username: e.target.value})
+  },
   },
   render: function(){
     return (
@@ -43,9 +44,9 @@ var LoginForm = React.createClass({
         </div>
         <form onSubmit={this.handleLoginSubmit}>
           <label htmlFor="username">User Name</label>
-          <input type="username" className="form-control log-entry" id="username" placeholder="Enter Username"></input>
+          <input onChange={this.handleUsernameChange} type="username" className="form-control log-entry" id="username" placeholder="Enter Username"></input>
           <label htmlFor="password">Password</label>
-          <input type="password" className="form-control log-entry" id="password" placeholder="Enter Password"></input>
+          <input onChange={this.handlePasswordChange} type="password" className="form-control log-entry" id="password" placeholder="Enter Password"></input>
           <input type="submit" className="btn btn-warning btn-sm pull-right" value="Login"></input>
         </form>
       </div>
