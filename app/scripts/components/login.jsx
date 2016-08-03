@@ -35,7 +35,6 @@ var LoginForm = React.createClass({
   handleUsernameChange: function(e){
     this.setState({username: e.target.value})
   },
-  },
   render: function(){
     return (
       <div className="col-md-2 log-form">
