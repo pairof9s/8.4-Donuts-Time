@@ -39,7 +39,7 @@ var Recipe = Backbone.Model.extend({
 var RecipeCollection = Backbone.Collection.extend({
   model: Recipe,
   url: 'https://d9-dev-server.herokuapp.com/classes/D9recipes/',
-  parser: function(serverResponse){
+  parse: function(serverResponse){
     return serverResponse.results;
   }
 });

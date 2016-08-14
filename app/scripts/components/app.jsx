@@ -55,7 +55,7 @@ var AppContainer = React.createClass({
             </div>
           </div>
           <div className="row">
-            <div className="col-xs-offset-3 col-xs-6 title-name">The Baker's Book</div>
+            <div className="col-xs-offset-3 col-xs-6 title-name">The Baker’s Book</div>
           </div>
           <div className="row">
             <span className="col-xs-offset-3 col-xs-2 title-bottom"></span>
@@ -87,6 +87,35 @@ var AppContainer = React.createClass({
 
 module.exports = AppContainer;
 
+// <div class="navbar navbar-inverse navbar-fixed-top">
+//   <div class="container">
+//     <div class="navbar-header">
+//       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+//         <span class="icon-bar"></span>
+//         <span class="icon-bar"></span>
+//         <span class="icon-bar"></span>
+//       </button>
+//       <a class="navbar-brand" href="#">Brand</a>
+//     </div>
+//     <div class="collapse navbar-collapse">
+//       <ul class="nav navbar-nav">
+//         <li class="active"><a href="#">Home</a></li>
+//         <li><a href="#about">Stay</a></li>
+//         <li><a href="#contact" data-toggle="collapse" data-target=".navbar-collapse.in">Close</a></li>
+//         <li><a href="#contact" data-toggle="collapse" data-target=".navbar-collapse.in">Close</a></li>
+//       </ul>
+//     </div><!--/.nav-collapse -->
+//   </div>
+// </div>
+//
+// <div class="container">
+//
+//   <div class="text-center">
+//     <h1>Bootstrap Navbar Collapse</h1>
+//     <p class="lead">Shrink the browser width until the navbar collapses. Click the "Close" menu links to collapse the mobile navbar when open.</p>
+//   </div>
+//
+// </div><!-- /.container -->
 
 // Previous component load for Recipe Form HTML for testing.
 // <section>

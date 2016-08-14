@@ -5,7 +5,7 @@ var SideBar = React.createClass({
     return (
       <div className="side-bar">
         <ul>
-          <li className="side-links"><a href="#">My Recipes</a></li>
+          <li className="side-links"><a href="#recipes/">My Recipes</a></li>
           <li className="side-links"><a href="#">Public Recipes</a></li>
           <li className="side-links"><a href="#">Popular Recipes</a></li>
           <li className="side-links"><a href="#">My Favorite Recipes</a></li>

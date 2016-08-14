@@ -1,6 +1,6 @@
 var React = require('react');
 
-var models = require('../models/recipes.js');
+var recipes = require('../models/recipes.js');
 var RecipeCollection = require('../models/recipes.js');
 var FormUpload = require('./library.jsx');
 var SideBar = require('./sidebar.jsx');
@@ -10,7 +10,7 @@ var RecipeForm = React.createClass({
   getInitialState: function(){
     return {
       'recipeName': '',
-      recipe: new models.Recipe()
+      recipe: new recipes.Recipe()
     };
   },
   componentWillMount: function(){
@@ -95,6 +95,10 @@ var RecipeForm = React.createClass({
                   <input type="text" className="form-control" id="cookTime" placeholder="Cook Time" />
                   <input type="text" className="form-control" id="cookTemp" placeholder="Cook Temp" />
                 </div>
+              </div>
+              <div className="col-sm-6">
+                <input type="text" className="form-control" id="servings" placeholder="Servings" />
+                <inut type="text" className="form-control" id="serving-type" placeholder="Serving Type" />
               </div>
               <div className="row">
                 <input value={this.state.recipeName} onChange={this.handleTitleChange} type="submit" className="btn btn-warning pull-right" value="Add Recipe"></input>

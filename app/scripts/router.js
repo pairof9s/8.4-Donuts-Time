@@ -11,11 +11,6 @@ var RecipeForm = require('./components/recipe-form.jsx');
 var RecipeDetail = require('./components/recipe-detail.jsx');
 
 
-// http://..../# => ''
-// http://..../#login => 'login'
-// http://..../#signup => 'signup'
-// http://..../#dashboard => ''
-
 var Router = Backbone.Router.extend({
   routes: {
     '': 'indexController',
@@ -39,7 +34,9 @@ var Router = Backbone.Router.extend({
     ReactDOM.render(
       React.createElement(AppContainer, {router: self}),
       document.getElementById('container')
-    );
+    )
+    // $('#container').addClass('wrapper-login');
+    // $('#container').removeClass('wrapper-main');
   },
   loginController: function(){
     console.log('login');
@@ -56,9 +53,6 @@ var Router = Backbone.Router.extend({
       React.createElement(SignUpForm, {router: self}),
       document.getElementById('container')
     )
-  },
-  dashboardController: function(){
-    console.log('dashboard');
   },
   recipeList: function(){
     console.log('recipes');

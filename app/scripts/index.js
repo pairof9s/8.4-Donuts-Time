@@ -1,10 +1,6 @@
 var $ = window.jQuery = require('jquery');
-
 var Backbone = require('backbone');
-// var User = require('./models/user').User;
-//
-// var Recipe = require('./models/recipes').Recipe;
-// // var RecipeForm = require('./components/recipe-form.jsx');
+
 
 $.ajaxSetup({
   beforeSend: function(xhr){
@@ -19,6 +15,12 @@ require('./router');
 $(function(){
 Backbone.history.start();
 });
+
+
+// var User = require('./models/user').User;
+//
+// var Recipe = require('./models/recipes').Recipe;
+// // var RecipeForm = require('./components/recipe-form.jsx');
 
 
 // $.fn.serializeObject = function(){
