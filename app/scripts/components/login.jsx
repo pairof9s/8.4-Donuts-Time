@@ -2,7 +2,7 @@ var React = require('react');
 var Backbone = require('backbone');
 var $ = require('jquery');
 
-var models = require('../models/recipes');
+
 var User = require('../models/user').User;
 
 

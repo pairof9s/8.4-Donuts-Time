@@ -77,8 +77,8 @@ var Session = Backbone.Model.extend({
 
 
 module.exports = {
-  Session: Session,
-  User: User
+  User: User,
+  Session: Session
 };
 
 
